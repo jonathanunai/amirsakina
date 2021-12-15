@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'amir-sakina',
+    title: 'Sakina and Amir`s celebration',
     htmlAttrs: {
       lang: 'en',
     },
@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: ''
+        content: 'Amir and Sakina, the wedding ceremony'
       },
       {
         name: 'format-detection',
