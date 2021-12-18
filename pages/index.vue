@@ -47,9 +47,7 @@
             of the wedding ceremony of their son: <br />
           </p>
           <div>
-            <p class="fancy">Amir</p>
-            <p class="">with</p>
-            <p class="fancy">Sakina</p>
+            <p class="fancy">Amir with Sakina</p>
             <p>D/o Shabbir & Nafisa Modi</p>
           </div>
           <div>
@@ -87,6 +85,9 @@
         the fruits of<br />
         good deeds<br />
         and bliss.”
+      </div>
+      <div class="page-4 page">
+        <CardScroll/>
       </div>
     </div>
     <button @click="moveNext">next</button>
@@ -133,6 +134,11 @@ export default {
   animation: gradient 15s ease infinite;
   color: #ffffff;
 }
+.page-4 {
+    background-color: #f7f8fc;
+  color: #10182f;
+
+}
 .part {
   padding: 1rem 0.65rem;
   text-align: center;
@@ -177,7 +183,7 @@ export default {
 }
 .fancy {
   color: #ad974f;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: Corinthia;
   font-weight: 700;
   line-height: 3rem;
