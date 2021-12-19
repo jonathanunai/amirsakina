@@ -98,6 +98,7 @@
 import HamburgerMenu from "../components/HamburgerMenu.vue"
 export default {
     name: "IndexPage",
+    components: { HamburgerMenu },
     data() {
         return {
             opts: {
@@ -115,10 +116,8 @@ export default {
         },
         moveTo(to) {
             this.$refs.webpages.$fullpage.moveTo(to,true,true)
-          console.log('to', to)
         }
-    },
-    components: { HamburgerMenu }
+    }
 }
 </script>
 <style>
