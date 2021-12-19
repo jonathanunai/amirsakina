@@ -1,6 +1,7 @@
 <template>
   <div class="fullpage-container">
-    <div ref="example" v-fullpage="opts" class="fullpage-wp">
+    <HamburgerMenu @moveTo="moveTo"/>
+    <div ref="webpages" v-fullpage="opts" class="fullpage-wp">
       <div class="page-1 page">
         <div class="part part-1">
           <div class="hearts">
@@ -28,7 +29,7 @@
             </h1>
           </div>
         </div>
-        <div class="down">
+        <div class="down" @click="moveNext">
           <img
             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABEklEQVRoge2WOQ7CQAxF/yWI4P43gQoEDRQcJxQwEkJYePdI+NXx8jST5ANN0zRN48sewBnAUr3IFxYAFwAHzsMnACuAG+aSWfDcaQVw5BRsAFxfBXcAu7DV+HzutNUWVsqoJagGFTJmCapRpoybBNUwQ8ZdgmocKRMmQQ2IkAmXoAZ5yqRJUAM9ZNIlqMEWmTIJagGNTKiEJDS+5x9pNtPUhoZG7UKWmrDQKKnRXKfU0MipSZWQLCapKZHgLCapKZUYeLzMGR8DFtaTKT2JXwMkMtNIDLTXrPQ6UXRoZPbq0GjBIjONxMDjp1kuMYgOjalEhcYSvENjKV6hcQqsoXEqtKFxSqShcWq4obFpmuaPeABpoeiFZo2bFwAAAABJRU5ErkJggg=="
           />
@@ -90,29 +91,34 @@
         <CardScroll/>
       </div>
     </div>
-    <button @click="moveNext">next</button>
-  </div>
+¨  </div>
 </template>
 
 <script>
+import HamburgerMenu from "../components/HamburgerMenu.vue"
 export default {
-  name: 'IndexPage',
-  data() {
-    return {
-      opts: {
-        start: 0,
-        dir: 'v',
-        duration: 500,
-        beforeChange(currentSlideEl, currenIndex, nextIndex) {},
-        afterChange(currentSlideEl, currenIndex) {},
-      },
-    }
-  },
-  methods: {
-    moveNext() {
-      this.$refs.example.$fullpage.moveNext()
+    name: "IndexPage",
+    data() {
+        return {
+            opts: {
+                start: 0,
+                dir: "v",
+                duration: 500,
+                beforeChange(currentSlideEl, currenIndex, nextIndex) { },
+                afterChange(currentSlideEl, currenIndex) { },
+            },
+        };
     },
-  },
+    methods: {
+        moveNext() {
+            this.$refs.webpages.$fullpage.moveNext();
+        },
+        moveTo(to) {
+            this.$refs.webpages.$fullpage.moveTo(to,true,true)
+          console.log('to', to)
+        }
+    },
+    components: { HamburgerMenu }
 }
 </script>
 <style>
