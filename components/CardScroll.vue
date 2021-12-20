@@ -28,7 +28,7 @@
       </div>
       <div class="card-body">
         <span class="tag tag-purple">24st FEBRUARY</span>
-        <h3>RUKHSATI</h3>
+        <h3>Rukhsati</h3>
         <p>Location: To be confirmed</p>
       </div>
     </div>
@@ -38,7 +38,7 @@
       </div>
       <div class="card-body">
         <span class="tag tag-yellow">26st FEBRUARY</span>
-        <h3>WALIMA/RECEPTION</h3>
+        <h3>Walima/reception</h3>
         <h4>Majestic Banquet Hall</h4>
         <p>
           Address: Next to Lal Qila Restaurant <br />
