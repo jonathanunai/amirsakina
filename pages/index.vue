@@ -21,22 +21,10 @@
             <div class="heart"></div>
           </div>
 
-          <div style="z-index: 11">
-            <h1
-              v-animate="{ value: 'bounceInLeft', delay: 300 }"
-              class="part-3"
-            >
-              Amir
-            </h1>
-            <h2
-              v-animate="{ value: 'bounceInRight', delay: 900 }"
-              class="part-3"
-            >
-              &
-            </h2>
-            <h1 v-animate="{ value: 'zoomIn', delay: 1500 }" class="part-3">
-              Sakina
-            </h1>
+          <div class="fade-in-text">
+            <h1>Amir</h1>
+            <h2>&</h2>
+            <h1>Sakina</h1>
           </div>
         </div>
         <div class="down" @click="moveNext">
@@ -124,7 +112,6 @@ export default {
   computed: {
     page() {
       if (this.$refs.webpages) return this.$refs.webpages.$fullpage.curIndex
-      console.log(this.$refs.webpages)
       return 2
     },
     classPage() {
@@ -139,7 +126,6 @@ export default {
       this.$refs.webpages.$fullpage.moveTo(to, true, true)
     },
   },
-  watch: {},
 }
 </script>
 <style>
@@ -247,6 +233,7 @@ h1 {
   font-weight: 700;
   line-height: 6rem;
   z-index: 11;
+  text-shadow: 1px 1px 12px rgb(0 0 0 / 33%);
 }
 h2 {
   color: #ffffff;
@@ -356,5 +343,35 @@ h2 {
 
 .heart:nth-child(4) {
   animation-delay: 4.5s;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.fade-in-text {
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150px;
+  color: black;
+  z-index: 11;
+  animation: fadeIn ease-in-out 2s;
+  -webkit-animation: fadeIn ease-in-out 2s;
+  -moz-animation: fadeIn ease-in-out 2s;
+  -o-animation: fadeIn ease-in-out 2s;
+  -ms-animation: fadeIn ease-in-out 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
 }
 </style>
