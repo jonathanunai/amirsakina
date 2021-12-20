@@ -1,6 +1,16 @@
 <template>
-  <div class="fullpage-container">
-    <HamburgerMenu @moveTo="moveTo"/>
+  <div class="fullpage-container" :class="classPage">
+    <svg
+      viewBox="0 0 116 128"
+      aria-hidden="true"
+      focusable="false"
+      class="header-shape"
+    >
+      <path
+        d="M0 128c7.998-19.35 24-32 42.936-40 13.84-5.848 28.752-9.135 40.043-18.416C94.269 60.303 112.889 41.791 116 0H0v128z"
+      ></path>
+    </svg>
+    <HamburgerMenu @moveTo="moveTo" />
     <div ref="webpages" v-fullpage="opts" class="fullpage-wp">
       <div class="page-1 page">
         <div class="part part-1">
@@ -88,36 +98,48 @@
         and bliss.”
       </div>
       <div class="page-4 page">
-        <CardScroll/>
+        <CardScroll />
       </div>
     </div>
-¨  </div>
+    ¨
+  </div>
 </template>
 
 <script>
-import HamburgerMenu from "../components/HamburgerMenu.vue"
+import HamburgerMenu from '../components/HamburgerMenu.vue'
 export default {
-    name: "IndexPage",
-    components: { HamburgerMenu },
-    data() {
-        return {
-            opts: {
-                start: 0,
-                dir: "v",
-                duration: 500,
-                beforeChange(currentSlideEl, currenIndex, nextIndex) { },
-                afterChange(currentSlideEl, currenIndex) { },
-            },
-        };
-    },
-    methods: {
-        moveNext() {
-            this.$refs.webpages.$fullpage.moveNext();
-        },
-        moveTo(to) {
-            this.$refs.webpages.$fullpage.moveTo(to,true,true)
-        }
+  name: 'IndexPage',
+  components: { HamburgerMenu },
+  data() {
+    return {
+      opts: {
+        start: 0,
+        dir: 'v',
+        duration: 500,
+        beforeChange(currentSlideEl, currenIndex, nextIndex) {},
+        afterChange(currentSlideEl, currenIndex) {},
+      },
     }
+  },
+  computed: {
+    page() {
+      if (this.$refs.webpages) return this.$refs.webpages.$fullpage.curIndex
+      console.log(this.$refs.webpages)
+      return 2
+    },
+    classPage() {
+      return `is-page-${this.page}`
+    },
+  },
+  methods: {
+    moveNext() {
+      this.$refs.webpages.$fullpage.moveNext()
+    },
+    moveTo(to) {
+      this.$refs.webpages.$fullpage.moveTo(to, true, true)
+    },
+  },
+  watch: {},
 }
 </script>
 <style>
@@ -127,6 +149,15 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
+}
+.header-shape {
+  color: #5738bf;
+  height: 7rem;
+  position: absolute;
+  top: 0;
+  width: 6.35rem;
+  z-index: 1;
+  fill: currentColor;
 }
 .page {
   display: flex;
@@ -140,9 +171,8 @@ export default {
   color: #ffffff;
 }
 .page-4 {
-    background-color: #f7f8fc;
+  background-color: #f7f8fc;
   color: #10182f;
-
 }
 .part {
   padding: 1rem 0.65rem;

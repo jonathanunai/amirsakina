@@ -55,7 +55,6 @@ export default {
   width: 39px;
   overflow: hidden;
   z-index: 3;
-  color: red;
 }
 
 #menu_checkbox {
@@ -129,7 +128,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background: #333;
+  background: #5738bf;
   color: #fff;
   padding: 5rem 1rem;
   margin: 0;
@@ -138,10 +137,11 @@ export default {
   max-width: 400px;
   border-radius: 0 0 5rem 0;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.72);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 li {
   cursor: pointer;
+  margin-bottom: 4px;
 }
 
 @keyframes moveUpThenDown {
