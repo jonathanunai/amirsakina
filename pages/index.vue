@@ -88,6 +88,9 @@
       <div class="page-4 page">
         <CardScroll />
       </div>
+      <div class="page-5 page">
+        <ImageGallery />
+      </div>
     </div>
     ¨
   </div>
@@ -129,6 +132,9 @@ export default {
 }
 </script>
 <style>
+body {
+  font-family: Merienda;
+}
 .fullpage-container {
   position: absolute;
   left: 0;
@@ -205,7 +211,7 @@ export default {
 .fancy {
   color: #ad974f;
   font-size: 3rem;
-  font-family: Corinthia;
+  font-family: Tangerine;
   font-weight: 700;
   line-height: 3rem;
 }
@@ -229,7 +235,7 @@ export default {
 h1 {
   color: #ffffff;
   font-size: 7rem;
-  font-family: Corinthia;
+  font-family: Tangerine;
   font-weight: 700;
   line-height: 6rem;
   z-index: 11;
@@ -238,7 +244,7 @@ h1 {
 h2 {
   color: #ffffff;
   font-size: 4rem;
-  font-family: Corinthia;
+  font-family: Tangerine;
   font-weight: 700;
   line-height: 3rem;
   z-index: 11;

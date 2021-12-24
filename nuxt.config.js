@@ -58,7 +58,8 @@ export default {
   build: {},
   googleFonts: {
     families: {
-      Corinthia: [400, 700],
+      Merienda: [400, 700],
+      Tangerine: [400, 700],
     }
   }
 

@@ -13,6 +13,7 @@
           <li @click="$emit('moveTo', 1)">Presentation</li>
           <li @click="$emit('moveTo', 2)">Quote</li>
           <li @click="$emit('moveTo', 3)">Events</li>
+          <li @click="$emit('moveTo', 4)">Gallery</li>
         </ul>
       </div>
     </transition>
