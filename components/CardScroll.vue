@@ -1,54 +1,62 @@
 <template>
-  <div class="row">
-    <div class="card">
-      <div class="card-header">
-        <img src="/mosque.jpeg" alt="DAREES" />
+    <div class="row">
+      <div class="card">
+        <div class="card-header">
+          <img src="/mosque.jpeg" alt="DAREES" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-teal">21st FEBRUARY</span>
+          <h3>Darees</h3>
+          <p>20mi RAJAB UL ASAB</p>
+          <h4>Masjid ul Burhani</h4>
+          <p>Umme Kulsoom Jamaal Khana Shabbirabad Block A, Karachi</p>
+        </div>
       </div>
-      <div class="card-body">
-        <span class="tag tag-teal">21st FEBRUARY</span>
-        <h3>Darees</h3>
-        <p>20mi RAJAB UL ASAB</p>
-        <h4>Masjid ul Burhani</h4>
-        <p>Umme Kulsoom Jamaal Khana Shabbirabad Block A, Karachi</p>
+      <div class="card">
+        <div class="card-header">
+          <img src="/mehendi.jpeg" alt="Mehendi" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-pink">23st FEBRUARY</span>
+          <h3>Mehendi Ceremony</h3>
+          <p>Location: To be confirmed</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <img src="/rukhsati.jpeg" alt="RUKHSATI" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-purple">24st FEBRUARY</span>
+          <h3>Rukhsati</h3>
+          <p>Location: To be confirmed</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <img src="/walima.jpeg" alt="Walima" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-yellow">26st FEBRUARY</span>
+          <h3>Walima/reception</h3>
+          <h4>Majestic Banquet Hall</h4>
+          <p>
+            Address: Next to Lal Qila Restaurant <br />
+            Main Shahrah-e-Faisal, Karachi
+          </p>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header">
-        <img src="/mehendi.jpeg" alt="Mehendi" />
-      </div>
-      <div class="card-body">
-        <span class="tag tag-pink">23st FEBRUARY</span>
-        <h3>Mehendi Ceremony</h3>
-        <p>Location: To be confirmed</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <img src="/rukhsati.jpeg" alt="RUKHSATI" />
-      </div>
-      <div class="card-body">
-        <span class="tag tag-purple">24st FEBRUARY</span>
-        <h3>Rukhsati</h3>
-        <p>Location: To be confirmed</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header">
-        <img src="/walima.jpeg" alt="Walima" />
-      </div>
-      <div class="card-body">
-        <span class="tag tag-yellow">26st FEBRUARY</span>
-        <h3>Walima/reception</h3>
-        <h4>Majestic Banquet Hall</h4>
-        <p>
-          Address: Next to Lal Qila Restaurant <br />
-          Main Shahrah-e-Faisal, Karachi
-        </p>
-      </div>
-    </div>
-  </div>
 </template>
-<script></script>
+<script>
+export default {
+  data() {
+    return {
+    }
+  },
+}
+</script>
+¨
 <style>
 .row {
   align-items: stretch;

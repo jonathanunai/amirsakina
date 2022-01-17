@@ -1,98 +1,113 @@
 <template>
-  <div class="fullpage-container" :class="classPage">
-    <svg
-      viewBox="0 0 116 128"
-      aria-hidden="true"
-      focusable="false"
-      class="header-shape"
-    >
-      <path
-        d="M0 128c7.998-19.35 24-32 42.936-40 13.84-5.848 28.752-9.135 40.043-18.416C94.269 60.303 112.889 41.791 116 0H0v128z"
-      ></path>
-    </svg>
-    <HamburgerMenu @moveTo="moveTo" />
-    <div ref="webpages" v-fullpage="opts" class="fullpage-wp">
-      <div class="page-1 page">
-        <div class="part part-1">
-          <div class="hearts">
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <div class="heart"></div>
-            <div class="heart"></div>
-          </div>
-
-          <div class="fade-in-text">
-            <h1>Amir</h1>
-            <h2>&</h2>
-            <h1>Sakina</h1>
-          </div>
-        </div>
-        <div class="down" @click="moveNext">
-          <img
-            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABEklEQVRoge2WOQ7CQAxF/yWI4P43gQoEDRQcJxQwEkJYePdI+NXx8jST5ANN0zRN48sewBnAUr3IFxYAFwAHzsMnACuAG+aSWfDcaQVw5BRsAFxfBXcAu7DV+HzutNUWVsqoJagGFTJmCapRpoybBNUwQ8ZdgmocKRMmQQ2IkAmXoAZ5yqRJUAM9ZNIlqMEWmTIJagGNTKiEJDS+5x9pNtPUhoZG7UKWmrDQKKnRXKfU0MipSZWQLCapKZHgLCapKZUYeLzMGR8DFtaTKT2JXwMkMtNIDLTXrPQ6UXRoZPbq0GjBIjONxMDjp1kuMYgOjalEhcYSvENjKV6hcQqsoXEqtKFxSqShcWq4obFpmuaPeABpoeiFZo2bFwAAAABJRU5ErkJggg=="
-          />
-        </div>
-      </div>
-      <div class="page-2 page">
-        <div class="part part-2">
-          <p class="yellow">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيم</p>
-          <p>
-            By the Grace of Allah, Vasila-e-Panjatan Pak (A.S), Aeemat Tahereen
-            (A.S), Duat Mutlaqeen (A.Q) & Dua Mubarak of Dai-uz-Zaman Aaliqadr
-            Syedna Mufaddal Saifuddin (T.U.S), Sadic Ali and Samina Ibramugi
-          </p>
-          <p>
-            take immense pleasure in inviting you to bless & grace the occasion
-            of the wedding ceremony of their son: <br />
-          </p>
-          <div>
-            <p class="fancy">Amir with Sakina</p>
-            <p>D/o Shabbir & Nafisa Modi</p>
-          </div>
-          <div>
-            <p>With the blessings of:</p>
-            <div class="flex flexcols">
-              <div class="col-left">
-                <p>Late Rashida Daudali Ibramugi</p>
-                <p>Late Hafiza Ayub Ali Multanwala</p>
-                <p>Brother and Sisters and Sister-in-Law</p>
-              </div>
-              <div class="col-right">
-                <p>Late Daudali Ibramugi</p>
-                <p>Late Sk Ayub Ali Multanwala</p>
-                <p>Nieces and Nephews</p>
-              </div>
-            </div>
-          </div>
-          <div class="flex flexcols">
-            <div class="col-left">
-              <p>No Box Gifts</p>
-            </div>
-            <div class="col-right">
-              <p>R.S.V.P.</p>
-              <p>03368253985</p>
-              <p>03008253985</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="page-3 page fancy">
-        “Marriage <br />
-        is an act of<br />
-        Deen. There in<br />
-        are to be found<br />
-        the fruits of<br />
-        good deeds<br />
-        and bliss.”
-      </div>
-      <div class="page-4 page">
-        <CardScroll />
-      </div>
-      <div class="page-5 page">
-        <ImageGallery />
+  <div>
+    <div v-if="notAllowed" class="auth">
+      <div>
+        <h2>Enter the password:</h2>
+        <br />
+        <input v-model="clave" type="password" /><br /><br /><br />
+        <a href="mailto:saimasadacali@gmail.com">- email me for info - </a
+        ><br />
+        <span>/Batul</span>
       </div>
     </div>
-    ¨
+
+    <div class="fullpage-container" :class="classPage">
+      <svg
+        viewBox="0 0 116 128"
+        aria-hidden="true"
+        focusable="false"
+        class="header-shape"
+      >
+        <path
+          d="M0 128c7.998-19.35 24-32 42.936-40 13.84-5.848 28.752-9.135 40.043-18.416C94.269 60.303 112.889 41.791 116 0H0v128z"
+        ></path>
+      </svg>
+      <HamburgerMenu @moveTo="moveTo" />
+      <div ref="webpages" v-fullpage="opts" class="fullpage-wp">
+        <div class="page-1 page">
+          <div class="part part-1">
+            <div class="hearts">
+              <div class="heart"></div>
+              <div class="heart"></div>
+              <div class="heart"></div>
+              <div class="heart"></div>
+            </div>
+
+            <div class="fade-in-text">
+              <h1>Amir</h1>
+              <h2>&</h2>
+              <h1>Sakina</h1>
+            </div>
+          </div>
+          <div class="down" @click="moveNext">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABEklEQVRoge2WOQ7CQAxF/yWI4P43gQoEDRQcJxQwEkJYePdI+NXx8jST5ANN0zRN48sewBnAUr3IFxYAFwAHzsMnACuAG+aSWfDcaQVw5BRsAFxfBXcAu7DV+HzutNUWVsqoJagGFTJmCapRpoybBNUwQ8ZdgmocKRMmQQ2IkAmXoAZ5yqRJUAM9ZNIlqMEWmTIJagGNTKiEJDS+5x9pNtPUhoZG7UKWmrDQKKnRXKfU0MipSZWQLCapKZHgLCapKZUYeLzMGR8DFtaTKT2JXwMkMtNIDLTXrPQ6UXRoZPbq0GjBIjONxMDjp1kuMYgOjalEhcYSvENjKV6hcQqsoXEqtKFxSqShcWq4obFpmuaPeABpoeiFZo2bFwAAAABJRU5ErkJggg=="
+            />
+          </div>
+        </div>
+        <div class="page-2 page">
+          <div class="part part-2">
+            <p class="yellow">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيم</p>
+            <p>
+              By the Grace of Allah, Vasila-e-Panjatan Pak (A.S), Aeemat
+              Tahereen (A.S), Duat Mutlaqeen (A.Q) & Dua Mubarak of Dai-uz-Zaman
+              Aaliqadr Syedna Mufaddal Saifuddin (T.U.S), Sadic Ali and Samina
+              Ibramugi
+            </p>
+            <p>
+              take immense pleasure in inviting you to bless & grace the
+              occasion of the wedding ceremony of their son: <br />
+            </p>
+            <div>
+              <p class="fancy">Amir with Sakina</p>
+              <p>D/o Shabbir & Nafisa Modi</p>
+            </div>
+            <div>
+              <p>With the blessings of:</p>
+              <div class="flex flexcols">
+                <div class="col-left">
+                  <p>Late Rashida Daudali Ibramugi</p>
+                  <p>Late Hafiza Ayub Ali Multanwala</p>
+                  <p>Brother and Sisters and Sister-in-Law</p>
+                </div>
+                <div class="col-right">
+                  <p>Late Daudali Ibramugi</p>
+                  <p>Late Sk Ayub Ali Multanwala</p>
+                  <p>Nieces and Nephews</p>
+                </div>
+              </div>
+            </div>
+            <div class="flex flexcols">
+              <div class="col-left">
+                <p>No Box Gifts</p>
+              </div>
+              <div class="col-right">
+                <p>R.S.V.P.</p>
+                <p>03368253985</p>
+                <p>03008253985</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page-3 page fancy">
+          <div class="part-2 quote">
+            “Marriage <br />
+            is an act of<br />
+            Deen. There in<br />
+            are to be found<br />
+            the fruits of<br />
+            good deeds<br />
+            and bliss.”
+          </div>
+        </div>
+        <div class="page-4 page">
+          <CardScroll v-if="!notAllowed" />
+        </div>
+        <div class="page-5 page">
+          <ImageGallery />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -107,18 +122,28 @@ export default {
         start: 0,
         dir: 'v',
         duration: 500,
-        beforeChange(currentSlideEl, currenIndex, nextIndex) {},
-        afterChange(currentSlideEl, currenIndex) {},
+        afterChange: (currentSlideEl, currenIndex) => {
+          this.page = currenIndex
+        },
       },
+      auth: false,
+      clave: '',
+      page: 1,
     }
   },
   computed: {
-    page() {
-      if (this.$refs.webpages) return this.$refs.webpages.$fullpage.curIndex
-      return 2
-    },
     classPage() {
       return `is-page-${this.page}`
+    },
+    notAllowed() {
+      return this.clave !== 'true love'
+    },
+  },
+  watch: {
+    notAllowed() {
+      this.$refs.webpages.$fullpage.$update()
+
+      this.moveTo(0)
     },
   },
   methods: {
@@ -134,6 +159,18 @@ export default {
 <style>
 body {
   font-family: Merienda;
+}
+.auth {
+  background: #ad974f;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 11111;
 }
 .fullpage-container {
   position: absolute;
@@ -197,16 +234,33 @@ body {
   color: #000099;
 }
 .page-3 {
-  background: url('/back3.jpg');
+  background: url('/background.jpg');
+  background-position: center;
+  background-size: cover;
   background-position: center;
   background-size: cover;
   color: #ad974f;
   align-items: flex-start;
   padding: 3rem 2rem;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.quote {
+  background: #ffffff;
+  border-radius: 2rem;
+  padding: 2rem;
+  font-size: 3.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .yellow {
   color: #ad974f;
-  font-size: 1.1rem;
+  font-size: 1.7rem;
 }
 .fancy {
   color: #ad974f;
