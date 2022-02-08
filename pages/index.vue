@@ -25,10 +25,10 @@
       <HamburgerMenu @moveTo="moveTo" />
       <div v-if="page !== 4" class="down" @click="moveNext">
         <svg
+          id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           version="1.1"
-          id="Capa_1"
           x="0px"
           y="0px"
           width="556.424px"

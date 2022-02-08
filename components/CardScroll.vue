@@ -2,14 +2,26 @@
     <div class="row">
       <div v-if="darees" class="card">
         <div class="card-header">
-          <img src="/mosque.jpeg" alt="DAREES" />
+          <img src="/photos/yusufi.jpg" alt="DAREES" />
         </div>
         <div class="card-body">
           <span class="tag tag-teal">21st FEBRUARY</span>
           <h3>Darees</h3>
-          <p>20mi RAJAB UL ASAB</p>
-          <h4>Masjid ul Burhani</h4>
-          <p>Umme Kulsoom Jamaal Khana Shabbirabad Block A, Karachi</p>
+          <p>8pm</p>
+          <h4>Yusufi Masjid</h4>
+          <p>Shabbirabad Block B, Karachi</p>
+        </div>
+      </div>
+      <div v-if="dulhandarees" class="card">
+        <div class="card-header">
+          <img src="/photos/dulhan-darees.jpeg" alt="DAREES" />
+        </div>
+        <div class="card-body">
+          <span class="tag tag-teal">22nd FEBRUARY</span>
+          <h3>Dulhan Darees</h3>
+          <p>8pm</p>
+          <h4></h4>
+          <p>38A Syedna Zoeb Rd Shabbirabad Block A, Karachi</p>
         </div>
       </div>
       <div v-if="mehendi" class="card">
@@ -63,6 +75,9 @@ export default {
   computed: {
     darees() {
       return ['amsa1877', 'love4459', 'code9661'].includes(this.clave)
+    },
+    dulhandarees() {
+      return ['amsa1877'].includes(this.clave)
     },
     mehendi() {
       return ['amsa1877'].includes(this.clave)
