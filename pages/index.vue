@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="notAllowed" class="auth">
+    <div v-if="!allowed" class="auth">
       <div>
         <h2>Enter the password:</h2>
         <br />
@@ -23,6 +23,45 @@
         ></path>
       </svg>
       <HamburgerMenu @moveTo="moveTo" />
+      <div v-if="page !== 4" class="down" @click="moveNext">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Capa_1"
+          x="0px"
+          y="0px"
+          width="556.424px"
+          height="556.424px"
+          viewBox="0 0 556.424 556.424"
+          style="enable-background: new 0 0 556.424 556.424"
+          xml:space="preserve"
+        >
+          <g>
+            <g>
+              <path
+                d="M508.094,13.5C511.82,6.043,508.087,0,499.749,0c0,0-205.77,0-205.773,0c-19.045,0.006-44.079,38.363-56.512,52.262    C215.594,76.711,50.874,259.809,49.681,262.196c-3.727,7.458-3.727,19.544,0,27.001l222.456,253.726    c3.727,7.458,13.507,13.501,21.843,13.501h205.77c8.335,0,12.071-6.043,8.345-13.501L285.638,289.197    c-3.728-7.457-3.728-19.544,0-27.001L508.094,13.5z"
+              />
+            </g>
+          </g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+        </svg>
+      </div>
+
       <div ref="webpages" v-fullpage="opts" class="fullpage-wp">
         <div class="page-1 page">
           <div class="part part-1">
@@ -38,11 +77,6 @@
               <h2>&</h2>
               <h1>Sakina</h1>
             </div>
-          </div>
-          <div class="down" @click="moveNext">
-            <img
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAABEklEQVRoge2WOQ7CQAxF/yWI4P43gQoEDRQcJxQwEkJYePdI+NXx8jST5ANN0zRN48sewBnAUr3IFxYAFwAHzsMnACuAG+aSWfDcaQVw5BRsAFxfBXcAu7DV+HzutNUWVsqoJagGFTJmCapRpoybBNUwQ8ZdgmocKRMmQQ2IkAmXoAZ5yqRJUAM9ZNIlqMEWmTIJagGNTKiEJDS+5x9pNtPUhoZG7UKWmrDQKKnRXKfU0MipSZWQLCapKZHgLCapKZUYeLzMGR8DFtaTKT2JXwMkMtNIDLTXrPQ6UXRoZPbq0GjBIjONxMDjp1kuMYgOjalEhcYSvENjKV6hcQqsoXEqtKFxSqShcWq4obFpmuaPeABpoeiFZo2bFwAAAABJRU5ErkJggg=="
-            />
           </div>
         </div>
         <div class="page-2 page">
@@ -101,7 +135,7 @@
           </div>
         </div>
         <div class="page-4 page">
-          <CardScroll v-if="!notAllowed" />
+          <CardScroll v-if="allowed" :clave="clave" />
         </div>
         <div class="page-5 page">
           <ImageGallery />
@@ -122,6 +156,7 @@ export default {
         start: 0,
         dir: 'v',
         duration: 500,
+        disable: true,
         afterChange: (currentSlideEl, currenIndex) => {
           this.page = currenIndex
         },
@@ -129,18 +164,19 @@ export default {
       auth: false,
       clave: '',
       page: 1,
+      keys: ['amsa1877', 'love4459', 'code9661', 'happy841'],
     }
   },
   computed: {
     classPage() {
       return `is-page-${this.page}`
     },
-    notAllowed() {
-      return this.clave !== 'true love'
+    allowed() {
+      return this.keys.includes(this.clave)
     },
   },
   watch: {
-    notAllowed() {
+    allowed() {
       this.$refs.webpages.$fullpage.$update()
 
       this.moveTo(0)
@@ -242,10 +278,9 @@ body {
   color: #ad974f;
   align-items: flex-start;
   padding: 3rem 2rem;
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .quote {
   background: #ffffff;
@@ -256,7 +291,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .yellow {
   color: #ad974f;
@@ -304,9 +338,20 @@ h2 {
   z-index: 11;
 }
 .down {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  margin: 0 auto;
+  margin-bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 111;
+}
+.down svg {
+  fill: #fff;
+  transform: rotate(-90deg);
+  width: 4rem;
+  height: 4rem;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+
 }
 @media only screen and (min-width: 600px) {
   .part {

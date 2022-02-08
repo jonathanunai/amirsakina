@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-      <div class="card">
+      <div v-if="darees" class="card">
         <div class="card-header">
           <img src="/mosque.jpeg" alt="DAREES" />
         </div>
@@ -12,7 +12,7 @@
           <p>Umme Kulsoom Jamaal Khana Shabbirabad Block A, Karachi</p>
         </div>
       </div>
-      <div class="card">
+      <div v-if="mehendi" class="card">
         <div class="card-header">
           <img src="/mehendi.jpeg" alt="Mehendi" />
         </div>
@@ -22,7 +22,7 @@
           <p>Location: To be confirmed</p>
         </div>
       </div>
-      <div class="card">
+      <div v-if="rukhasti"  class="card">
         <div class="card-header">
           <img src="/rukhsati.jpeg" alt="RUKHSATI" />
         </div>
@@ -32,7 +32,7 @@
           <p>Location: To be confirmed</p>
         </div>
       </div>
-      <div class="card">
+      <div v-if="walima" class="card">
         <div class="card-header">
           <img src="/walima.jpeg" alt="Walima" />
         </div>
@@ -50,9 +50,29 @@
 </template>
 <script>
 export default {
+  props: {
+    clave: {
+      type: String,
+      default: ''
+    },
+  },
   data() {
     return {
     }
+  },
+  computed: {
+    darees() {
+      return ['amsa1877', 'love4459', 'code9661'].includes(this.clave)
+    },
+    mehendi() {
+      return ['amsa1877'].includes(this.clave)
+    },
+    rukhasti() {
+      return ['amsa1877'].includes(this.clave)
+    },
+    walima() {
+      return ['amsa1877', 'happy841'].includes(this.clave)
+    },
   },
 }
 </script>
@@ -79,7 +99,7 @@ export default {
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 330px;
+  min-width: 330px;
 }
 
 .card > img {
