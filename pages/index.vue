@@ -135,10 +135,10 @@
           </div>
         </div>
         <div class="page-4 page">
-          <CardScroll v-if="allowed" :clave="clave" />
+          <ImageGallery />
         </div>
         <div class="page-5 page">
-          <ImageGallery />
+          <CardScroll v-if="allowed" :clave="clave" />
         </div>
       </div>
     </div>
