@@ -147,7 +147,6 @@ export default {
   color: #fff;
   padding: 2px 10px;
   text-transform: uppercase;
-  cursor: pointer;
 }
 .tag-teal {
   background-color: #47bcd4;
