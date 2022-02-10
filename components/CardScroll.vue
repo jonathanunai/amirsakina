@@ -86,7 +86,7 @@ export default {
       return ['amsa1877'].includes(this.clave)
     },
     walima() {
-      return ['amsa1877', 'happy841'].includes(this.clave)
+      return ['amsa1877', 'code9661', 'happy841'].includes(this.clave)
     },
   },
 }
